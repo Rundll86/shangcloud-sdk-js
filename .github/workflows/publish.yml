@@ -12,7 +12,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
       - uses: pnpm/action-setup@v3
       - run: pnpm ci
 
@@ -24,7 +23,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
           registry-url: https://registry.npmjs.org/
       - uses: pnpm/action-setup@v3
       - run: pnpm publish --no-git-checks --access public
