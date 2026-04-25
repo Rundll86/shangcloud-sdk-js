@@ -100,6 +100,16 @@ client.setClientSecret('new-secret');
 }
 ```
 
+### `await user.getVariable(key) -> string`、`await user.setVariable(key, value)`、`await user.deleteVariable(key)`
+
+通过 `/api/varibles` 操作当前用户的变量存储，需要授权时携带 `var:io` scope。
+
+```javascript
+await user.setVariable('theme', 'dark');
+const value = await user.getVariable('theme');
+await user.deleteVariable('theme');
+```
+
 ### `user.isExpired() -> boolean`
 
 检查 token 是否即将过期（提前 60 秒返回 `true`）。

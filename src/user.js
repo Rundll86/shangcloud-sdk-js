@@ -36,6 +36,31 @@ class UserInstance {
   async getBasicInfo() {
     return this._client._getUserBasicInfo(this._accessToken, this._tokenType);
   }
+
+  /**
+   * @param {string} key
+   * @returns {Promise<string>}
+   */
+  async getVariable(key) {
+    return this._client._variableAction('read', key, '', this._accessToken, this._tokenType);
+  }
+
+  /**
+   * @param {string} key
+   * @param {string} value
+   * @returns {Promise<void>}
+   */
+  async setVariable(key, value) {
+    await this._client._variableAction('write', key, value, this._accessToken, this._tokenType);
+  }
+
+  /**
+   * @param {string} key
+   * @returns {Promise<void>}
+   */
+  async deleteVariable(key) {
+    await this._client._variableAction('delete', key, '', this._accessToken, this._tokenType);
+  }
 }
 
 module.exports = { UserInstance };

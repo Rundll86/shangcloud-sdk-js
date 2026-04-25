@@ -123,6 +123,19 @@ class Client {
     return new UserBasicInfo(data);
   }
 
+  async _variableAction(action, key, value, accessToken, tokenType) {
+    const data = await this._request(
+      '/api/varibles',
+      { key, action, value },
+      accessToken,
+      tokenType,
+    );
+    if (data && data.error) {
+      throw new Error(`variable ${action} failed: ${data.error}`);
+    }
+    return (data && data.value) || '';
+  }
+
   async _request(path, body, accessToken, tokenType) {
     return httpRequest({
       url: `${this.baseUrl}${path}`,
