@@ -1,12 +1,16 @@
 {
-  "name": "shangcloud-sdk",
-  "version": "1.0.0",
-  "description": "ShangCloud OAuth 2.0 SDK for Node.js",
-  "main": "index.js",
-  "keywords": ["shangcloud", "oauth", "sdk"],
-  "author": "YearnStudio Horizon",
-  "license": "MIT",
-  "engines": {
-    "node": ">=14.0.0"
-  }
+    "name": "shangcloud-sdk",
+    "version": "1.0.0",
+    "description": "ShangCloud OAuth 2.0 SDK for Node.js",
+    "main": "index.js",
+    "keywords": [
+        "shangcloud",
+        "oauth",
+        "sdk"
+    ],
+    "author": "YearnStudio Horizon",
+    "license": "MIT",
+    "engines": {
+        "node": ">=14.0.0"
+    }
 }
